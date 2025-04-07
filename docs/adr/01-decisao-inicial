@@ -1,0 +1,27 @@
+# ADR 0001: Decisão Inicial
+
+Data: 2025-04-06
+
+## Status
+
+Aceito
+
+## Contexto
+
+Este projeto busca resolver o case técnico: Integração com  HubSpot, mostrando na implementação como
+o problema foi entendido, resolvido e estruturado.
+
+
+## Decisão
+1- API aberta na configuração Security a fim de facilitar o teste feito por terceiros
+2- O HubSpot não tem obrigatoriedade de preenchimento do campo email, apesar de ser recomendável estar
+devidamente preenchido, porém optei por deixar esse campo como obrigatório para garantir a utilização
+dos dados recebidos para futuras ações de comunicação
+3- Consideração sobre o uso do Docker para rodar o ngrok, seria utilizado no recebimento de webhook
+de maneira mais estruturada, agregando conhecimento no projeto. No entanto, a simplicidade venceu utilizando
+sites que já simulam um servidor próprio oferecendo rapidez na solução do problema, para este projeto
+foi utilizado o Pipedream
+4- A utilização do log ao invés de um banco de dados, já que a implementação do banco acrescentaria tempo
+no desenvolvimento, também considerei a utilização de ferramentas de log como Logtail ou Logz.io que
+permitiria guardar os logs e trazer a opção de observação de indicadores, porém optei pelo log simples
+no servidor focando na simplicidade e gestão de tempo
